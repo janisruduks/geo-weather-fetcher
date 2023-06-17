@@ -1,4 +1,4 @@
-package io.codelex.custom.weather;
+package io.codelex;
 
 public class IPResponse {
     private String ip;

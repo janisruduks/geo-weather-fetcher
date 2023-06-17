@@ -1,4 +1,4 @@
-package io.codelex.custom.weather;
+package io.codelex;
 
 public class LocationResponse {
     private String city;

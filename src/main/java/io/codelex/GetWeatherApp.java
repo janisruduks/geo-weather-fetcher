@@ -1,9 +1,11 @@
-package io.codelex.custom.weather;
+package io.codelex;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Optional;
 
@@ -44,8 +46,8 @@ public class GetWeatherApp {
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try {
             return Optional.ofNullable(mapper
-                    .readValue(new URL(url), response));
-        } catch (IOException e) {
+                    .readValue(new URI(url).toURL(), response));
+        } catch (IOException | URISyntaxException e) {
             System.out.println("Error: " + e.getMessage());
         }
         return Optional.empty();

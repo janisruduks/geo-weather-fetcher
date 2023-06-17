@@ -1,4 +1,4 @@
-package io.codelex.custom.weather;
+package io.codelex;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
